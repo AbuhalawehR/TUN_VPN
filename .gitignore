@@ -1,7 +1,1 @@
- #git branch <branch-name>
- #git switch <branch-name>
- #git fetch origin
- #git reset -- hard <source-branch-name>
- #git pull
- #ip -4 addr show (check VM ip)
- #g++ -
+notes.txt
