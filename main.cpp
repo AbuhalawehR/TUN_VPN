@@ -101,6 +101,12 @@ int main(){
         int ip_version = (buffer[0] >> 4) & 0x0F;
         //Just checker for which IP version used and if IFF_NO_PI worked
 
+        if (ip_version == 4 && bytes_read >= 20){
+            uint8_t l4_protocol = buffer[9];    //B9 of IPv4 header is layer 4 protocol ID
+                //1 = ICMP (ping), 6 = TCP, 17 = UDP
+                std::cout << "L4 Protocol ID: " << (int)l4_protocol << std::endl;
+        }
+
         std::cout << "Captured packet: " << bytes_read << " bytes | Ipv" << ip_version << std::endl;
     }
 
